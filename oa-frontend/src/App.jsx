@@ -11,7 +11,7 @@ const PrivateRoute = ({ children, requiredRole }) => {
 
   // AuthContext 还在从后端恢复状态，先不要做任何跳转
   if (initializing) {
-    return null; // 也可以换成一个 Loading 组件
+    return null;
   }
 
   if (!isAuthenticated) {
