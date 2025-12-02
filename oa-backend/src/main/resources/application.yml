@@ -1,0 +1,19 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/oa_system?useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: qaz96321   # 换成你自己的
+  jpa:
+    hibernate:
+      ddl-auto: update        # 开发阶段自动建表
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+# 为了前后端联调方便，可以允许前端端口
+cors:
+  allowed-origins: http://localhost:5173
