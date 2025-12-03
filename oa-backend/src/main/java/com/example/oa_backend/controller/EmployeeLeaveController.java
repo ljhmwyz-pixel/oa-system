@@ -146,12 +146,41 @@ public class EmployeeLeaveController {
             dto.type = e.getType();
             dto.startDate = e.getStartDate();
             dto.endDate = e.getEndDate();
-            // 这里 status 是 String，不能再 .name()
+            // 修复：status 是 String 类型，不能调用 .name() 方法
             dto.status = e.getStatus();
             dto.reason = e.getReason();
             return dto;
         }
 
-        // 如需在前端反向绑定，可以再补 getter/setter
+        // getters and setters
+        public Long getId() { return id; }
+        public void setId(Long id) { this.id = id; }
+        
+        public String getEmployeeUsername() { return employeeUsername; }
+        public void setEmployeeUsername(String employeeUsername) { this.employeeUsername = employeeUsername; }
+        
+        public String getEmployeeRealName() { return employeeRealName; }
+        public void setEmployeeRealName(String employeeRealName) { this.employeeRealName = employeeRealName; }
+        
+        public String getApproverUsername() { return approverUsername; }
+        public void setApproverUsername(String approverUsername) { this.approverUsername = approverUsername; }
+        
+        public String getApproverRealName() { return approverRealName; }
+        public void setApproverRealName(String approverRealName) { this.approverRealName = approverRealName; }
+        
+        public String getType() { return type; }
+        public void setType(String type) { this.type = type; }
+        
+        public LocalDate getStartDate() { return startDate; }
+        public void setStartDate(LocalDate startDate) { this.startDate = startDate; }
+        
+        public LocalDate getEndDate() { return endDate; }
+        public void setEndDate(LocalDate endDate) { this.endDate = endDate; }
+        
+        public String getStatus() { return status; }
+        public void setStatus(String status) { this.status = status; }
+        
+        public String getReason() { return reason; }
+        public void setReason(String reason) { this.reason = reason; }
     }
 }
